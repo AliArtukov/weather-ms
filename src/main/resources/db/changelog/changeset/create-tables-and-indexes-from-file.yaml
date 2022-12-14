@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-tables-and-indexes-from-file
+      author: atoy
+      comment: create tables and indexes for starting service
+      changes:
+        - sqlFile:
+            dbms: 'all'
+            endDelimiter: \nGO
+            splitStatements: false
+            stripComments: false
+            path: db/changelog/changeset/sql/create-tables-and-indexes.sql

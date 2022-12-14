@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-first-data-from-file
+      author: atoy
+      comment: add first data to tables for starting service
+      changes:
+        - sqlFile:
+            dbms: 'all'
+            endDelimiter: \nGO
+            splitStatements: false
+            stripComments: false
+            path: db/changelog/changeset/sql/add-first-data.sql
