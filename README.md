@@ -16,3 +16,5 @@ Of the requirements in the terms of reference, technologies not used:
 1. web flux
 2. junit
 3. mockito
+
+Reason for not using some technologies: Could not share time due to work in the main workplace.
