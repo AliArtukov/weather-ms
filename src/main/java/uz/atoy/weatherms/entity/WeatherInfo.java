@@ -12,9 +12,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = WeatherInfo.TABLE_NAME)
+@Table(name = "weather_info")
 public class WeatherInfo {
-    public static final String TABLE_NAME = "weather_info";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

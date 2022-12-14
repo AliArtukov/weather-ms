@@ -14,8 +14,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 public class UserSubscriptionDto implements Serializable {
+
+    private Integer id;
+
     @NotNull
     private UserInfoDto user;
+
     @NotNull
     private CityInfoDto city;
+
 }

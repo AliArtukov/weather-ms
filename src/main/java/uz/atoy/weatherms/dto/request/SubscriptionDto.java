@@ -10,8 +10,11 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Data
 public class SubscriptionDto {
+
     @NotNull
     private Integer userId;
+
     @NotNull
     private Integer cityId;
+
 }

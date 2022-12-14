@@ -15,11 +15,15 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 public class CityInfoDto implements Serializable {
+
     private Integer id;
+
     @Size(max = 50)
     @NotNull
     private String name;
+
     @Size(max = 50)
     @NotNull
     private String country;
+
 }

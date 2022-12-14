@@ -11,10 +11,9 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @Entity
-@Table(name = CityInfo.TABLE_NAME)
+@Table(name = "city_info")
 public class CityInfo {
 
-    public static final String TABLE_NAME = "city_info";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

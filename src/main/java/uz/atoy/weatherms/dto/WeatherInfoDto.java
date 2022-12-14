@@ -16,29 +16,43 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class WeatherInfoDto implements Serializable {
+
+    private Integer id;
+
     @NotNull
     private LocalDate date;
+
     @NotNull
     private Short morning;
+
     @NotNull
     private Short daytime;
+
     @NotNull
     private Short evening;
+
     @NotNull
     private Short humidity;
+
     @NotNull
     private Short wind;
+
     @NotNull
     private Short pressure;
+
     @Size(max = 50)
     @NotNull
     private String moon;
+
     @Size(max = 5)
     @NotNull
     private String sunrise;
+
     @Size(max = 5)
     @NotNull
     private String sunset;
+
     @NotNull
     private CityInfoDto city;
+
 }

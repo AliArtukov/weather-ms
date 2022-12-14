@@ -21,6 +21,7 @@ import uz.atoy.weatherms.repository.WeatherInfoRepository;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Base64;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -81,8 +82,11 @@ public class AdminController {
         if (userInfoOptional.isEmpty())
             return new ResponseEntity<>("User not found!", 204);
 
+        String decodedString = userInfoDto.getLogin() + ":" + userInfoDto.getPassword();
+        String encodedString = Base64.getEncoder().encodeToString(decodedString.getBytes());
         UserInfo userInfo = userInfoOptional.get();
         userInfo = userInfoMapper.partialUpdate(userInfoDto, userInfo);
+        userInfo.setBaseToken(encodedString);
         userInfo = userInfoRepository.save(userInfo);
         return new ResponseEntity<>(userInfoMapper.toDto(userInfo));
     }
@@ -113,8 +117,7 @@ public class AdminController {
 
     @PostMapping("/update-city-weather")
     public ResponseEntity<WeatherInfoDto> updateWeatherInfo(@RequestBody @NotNull @Valid WeatherInfoDto weatherInfoDto) {
-        // nado proverit is null
-        if (Objects.isNull(weatherInfoDto.getCity().getId()))
+        if (Objects.isNull(weatherInfoDto.getCity()) || Objects.isNull(weatherInfoDto.getCity().getId()))
             return new ResponseEntity<>("City id not found!", 406);
 
         Optional<CityInfo> cityInfoOptional = cityInfoRepository.findById(weatherInfoDto.getCity().getId());

@@ -73,7 +73,7 @@ public class UserController {
         );
     }
 
-    @GetMapping("/subscribe-to-city/{cityId}")
+    @PostMapping("/subscribe-to-city")
     public ResponseEntity<List<UserSubscriptionDto>> addCityToSubscription(@RequestBody @NotNull @Valid SubscriptionDto subscriptionDto) {
         if (Objects.isNull(subscriptionDto.getUserId()))
             return new ResponseEntity<>("User id not found!", 406);

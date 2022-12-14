@@ -10,9 +10,9 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @Entity
-@Table(name = UserSubscription.TABLE_NAME)
+@Table(name = "user_subscription")
 public class UserSubscription {
-    public static final String TABLE_NAME = "user_subscription";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

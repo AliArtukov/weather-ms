@@ -10,7 +10,7 @@
     </parent>
     <groupId>uz.atoy</groupId>
     <artifactId>weather-ms</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>weather-ms</name>
     <description>weather-ms</description>
     <properties>
@@ -77,7 +77,7 @@
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-dependencies</artifactId>
-                <version>2.7.5</version>
+                <version>2.7.6</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

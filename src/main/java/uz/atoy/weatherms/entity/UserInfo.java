@@ -1,9 +1,11 @@
 package uz.atoy.weatherms.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @AllArgsConstructor
@@ -11,9 +13,9 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @Entity
-@Table(name = UserInfo.TABLE_NAME)
+@Table(name = "user_info")
 public class UserInfo {
-    public static final String TABLE_NAME = "user_info";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -27,8 +29,6 @@ public class UserInfo {
     @Column(name = "lastname", length = 50)
     private String lastname;
 
-    @NotNull
-    @Lob
     @Column(name = "base_token", nullable = false, columnDefinition = "text")
     private String baseToken;
 
