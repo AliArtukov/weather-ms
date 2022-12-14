@@ -1,0 +1,10 @@
+uz.atoy.weatherms
+uz.atoy.weatherms.controller
+uz.atoy.weatherms.dto
+uz.atoy.weatherms.dto.request
+uz.atoy.weatherms.dto.response
+uz.atoy.weatherms.entity
+uz.atoy.weatherms.mapper
+uz.atoy.weatherms.repository
+uz.atoy.weatherms.service
+uz.atoy.weatherms.service.impl

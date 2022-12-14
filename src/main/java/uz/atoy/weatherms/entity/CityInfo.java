@@ -29,4 +29,8 @@ public class CityInfo {
     @Column(name = "country", nullable = false, length = 50)
     private String country;
 
+    @NotNull
+    @Column(name = "enabled", nullable = false)
+    private Boolean enabled;
+
 }

@@ -26,4 +26,7 @@ public class CityInfoDto implements Serializable {
     @NotNull
     private String country;
 
+    @NotNull
+    private Boolean enabled;
+
 }

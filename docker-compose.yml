@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: weather_db
+    restart: always
+    networks:
+      - mynet
+  admin-server:
+    container_name: projects-admin-server
+    image: aliartukov/projects-admin-server:1.0.1
+    ports:
+      - "8090:8090"
+    networks:
+      - mynet
+  weather-ms:
+    container_name: weather-ms
+    image: aliartukov/weather-ms
+    depends_on:
+      - postgres
+#    build: .
+    ports:
+      - "8091:8091"
+    networks:
+      - mynet
+
+volumes:
+  postgresql: {}
+
+networks:
+  mynet:
+    driver: bridge

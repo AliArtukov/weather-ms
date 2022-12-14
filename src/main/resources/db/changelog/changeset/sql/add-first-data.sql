@@ -1,10 +1,10 @@
 INSERT INTO public.user_info (firstname, lastname, base_token) VALUES ('Ali', null, 'QWxpOnBhc3N3b3Jk');
 INSERT INTO public.user_info (firstname, lastname, base_token) VALUES ('Sanjar', null, 'U2FuamFyOnBhc3N3b3Jk');
 
-INSERT INTO public.city_info (name, country) VALUES ('Tashkent', 'Uzbekistan');
-INSERT INTO public.city_info (name, country) VALUES ('Samarkand', 'Uzbekistan');
-INSERT INTO public.city_info (name, country) VALUES ('Bukhara', 'Uzbekistan');
-INSERT INTO public.city_info (name, country) VALUES ('Andijan', 'Uzbekistan');
+INSERT INTO public.city_info (name, country, enabled) VALUES ('Tashkent', 'Uzbekistan', true);
+INSERT INTO public.city_info (name, country, enabled) VALUES ('Samarkand', 'Uzbekistan', true);
+INSERT INTO public.city_info (name, country, enabled) VALUES ('Bukhara', 'Uzbekistan', true);
+INSERT INTO public.city_info (name, country, enabled) VALUES ('Andijan', 'Uzbekistan', false);
 
 INSERT INTO public.user_subscription (user_id, city_id) VALUES (1, 1);
 INSERT INTO public.user_subscription (user_id, city_id) VALUES (2, 1);

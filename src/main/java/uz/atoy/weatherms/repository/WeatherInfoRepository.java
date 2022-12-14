@@ -8,14 +8,15 @@ import uz.atoy.weatherms.entity.WeatherInfo;
 
 import java.util.List;
 
-//@Repository
+@Repository
 public interface WeatherInfoRepository extends JpaRepository<WeatherInfo, Integer> {
 
     @Query(
             value = "select wi.id, wi.date, wi.morning, wi.daytime, wi.evening, wi.humidity, wi.wind, wi.pressure, wi.moon, wi.sunrise, wi.sunset, wi.city_id \n" +
                     "from weather_info wi \n" +
                     "inner join user_subscription us on wi.city_id = us.city_id \n" +
-                    "where us.user_id = :userId",
+                    "inner join city_info ci on wi.city_id = ci.id \n" +
+                    "where ci.enabled = true and us.user_id = :userId",
             nativeQuery = true
     )
     List<WeatherInfo> findWeatherInfosByUserId(@Param("userId") Integer userId);

@@ -1,7 +1,8 @@
 CREATE TABLE "city_info" (
                              "id" serial PRIMARY KEY,
                              "name" varchar(50) NOT NULL,
-                             "country" varchar(50) NOT NULL
+                             "country" varchar(50) NOT NULL,
+                             "enabled" boolean NOT NULL
 );
 
 CREATE TABLE "weather_info" (
